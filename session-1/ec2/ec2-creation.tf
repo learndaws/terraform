@@ -4,7 +4,7 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [aws_security_group.Security-Group.id]
 
   tags = {
-    Name = "ec2-12-Feb-2024"
+    Name = "ec2-12-Feb-2024-1"
   }
 }
 
