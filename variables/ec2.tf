@@ -1,4 +1,9 @@
-resource "aws_instance" "TF-AWS-Instance" {
-    ami = var.ami_id
-    instance_type = var.instance_type
+resource "aws_instance" "web" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  vpc_security_group_ids = [aws_security_group.Security-Group.id]
+
+  tags = {
+    Name = "ec2-13-Feb-2024"
+  }
 }
