@@ -1,4 +1,4 @@
-resource "aws_instance" "web" {
+resource "aws_instance" "TF-AWS-Instance" {
   ami           = var.ami_id
   instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.Security-Group.id]
