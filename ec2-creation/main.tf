@@ -1,8 +1,8 @@
-resource "aws_instance" "TF-AWS-EC2" {
-    ami = "ami-0f3c7d07486cad139"
-    instance_type = "t2.micro"
-
-    tags = {
-        Name = "Terraform"
-    }
+resource "aws_route53_record" "www" {
+  zone_id = "Z08149982GBIICXQF76PI"
+  name    = "abc.hellodns.xyz"
+  type    = "A"
+  ttl     = 1
+  records = ["10.1.1.1"]
 }
+
