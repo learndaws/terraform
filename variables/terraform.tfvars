@@ -1,1 +1,1 @@
-instance_type = "t1.micro"
+instance_test = "t1.micro"
