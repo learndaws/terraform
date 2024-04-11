@@ -132,34 +132,16 @@ resource "aws_route" "rtbl_public" {
     gateway_id                = aws_internet_gateway.roboshop.id
   }
 
-resource "aws_route" "rtbl_public_vpc_peering" {
-  route_table_id            = aws_route_table.rt_public.id
-  destination_cidr_block    = "172.31.0.0/16"
-  vpc_peering_connection_id = "pcx-06ec445952ef7e68a"
-}
-
 resource "aws_route" "rtbl_private" {
   route_table_id            = aws_route_table.rt_private.id
   destination_cidr_block    = "0.0.0.0/0"
   nat_gateway_id                = aws_nat_gateway.nat_gw_1.id
 }
 
-resource "aws_route" "rtbl_private_vpc_peering" {
-  route_table_id            = aws_route_table.rt_private.id
-  destination_cidr_block    = "172.31.0.0/16"
-  vpc_peering_connection_id = "pcx-06ec445952ef7e68a"
-}
-
 resource "aws_route" "rtbl_database" {
   route_table_id            = aws_route_table.rt_database.id
   destination_cidr_block    = "0.0.0.0/0"
   nat_gateway_id            = aws_nat_gateway.nat_gw_1.id
-}
-
-resource "aws_route" "rtbl_database_vpc_peering" {
-  route_table_id            = aws_route_table.rt_database.id
-  destination_cidr_block    = "172.31.0.0/16"
-  vpc_peering_connection_id = "pcx-06ec445952ef7e68a"
 }
 
 resource "aws_route_table_association" "rta_public" {
