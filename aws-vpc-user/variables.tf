@@ -14,6 +14,22 @@ variable "igw_function_tags" {
     }
 }
 
+variable "nat_gw_function_tags" {
+    type = map 
+    default = {
+        Function = "nat_gw"
+        Environment = "Syst"
+    }
+}
+
+variable "rt_function_tags" {
+    type = map 
+    default = {
+        Function = "routing_table"
+        Environment = "Syst"
+    }
+}
+
 variable "public_subnets_function_tags" {
     type = map 
     default = {
@@ -51,4 +67,8 @@ variable "private_cidr_block" {
 variable "database_cidr_block" {
     type = list 
     default = ["10.2.22.0/24", "10.2.23.0/24", "10.2.24.0/24", "10.2.25.0/24"]
+}
+
+variable "vpc_peering_required" {
+    default = true
 }

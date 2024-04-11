@@ -37,6 +37,14 @@ variable "database_subnets_function_tags" {
     type = map
 }
 
+variable "nat_gw_function_tags" {
+    type = map
+}
+
+variable "rt_function_tags" {
+    type = map
+}
+
 variable "vpc_hostname" {
   type        = string
 }
@@ -54,6 +62,22 @@ variable "private_subnets_hostname" {
 }
 
 variable "database_subnets_hostname" {
+  type        = string
+}
+
+variable "nat_gw_hostname" {
+  type        = string
+}
+
+variable "rt_public_hostname" {
+  type        = string
+}
+
+variable "rt_private_hostname" {
+  type        = string
+}
+
+variable "rt_database_hostname" {
   type        = string
 }
 
@@ -79,6 +103,16 @@ variable "database_cidr_block" {
     condition = length(var.database_cidr_block) == 4
     error_message = "please give only 4 public subnets"
   }
+}
+
+variable "vpc_peering_required" {
+  type = bool
+  default = false
+}
+
+variable "peer_vpc_id" {
+  type = string 
+  default = ""
 }
 
 
