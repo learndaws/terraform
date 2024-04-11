@@ -1,5 +1,6 @@
 module "vpc" {
   source = "../aws-vpc-developer"
+  #source = "git::https://github.com/learndaws/terraform.git?ref=main"
   
    cidr_block = "10.2.0.0/16"
    vpc_function_tags = var.vpc_function_tags
