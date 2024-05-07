@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "../aws-vpc-developer"
+  source = "../../aws-vpc-developer"
   #source = "git::https://github.com/learndaws/terraform.git?ref=main"
   
    cidr_block = "10.2.0.0/16"

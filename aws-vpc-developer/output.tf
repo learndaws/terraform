@@ -13,3 +13,7 @@ output "test-private-subnets" {
 output "test-database-subnets" {
     value = local.req_database_available_zones
 }
+
+output "vpc_id" {
+    value = aws_vpc.roboshop.id
+}

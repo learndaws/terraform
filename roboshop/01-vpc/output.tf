@@ -13,3 +13,7 @@ output "zones_avail_private" {
 output "zones_avail_database" {
     value = module.vpc.test-database-subnets
 }
+
+output "ssm_vpc_id" {
+    value = module.vpc.vpc_id
+}
